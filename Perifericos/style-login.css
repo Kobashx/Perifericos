@@ -1,0 +1,156 @@
+body {
+  margin: 0px;
+  font-family: "Mulish", sans-serif; /*fuente*/
+}
+
+.header {
+  background: #21c08b;
+  align-items: center;
+  width: 100%; /*se adapta a cualquier tamaño de pantalla*/
+  display: flex; /*Organiza los elementos de left a rigth*/
+  justify-content: space-between; /*los elementos se distribuyen uniformemente en la linea*/
+  height: 100px;
+}
+
+.header__img {
+  width: 250px;
+  margin-left: 30px;
+}
+
+.login {
+  background: linear-gradient(#21c08b, #ab88ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 30px; /* separa la parte de arriba y abajo, dando más espacio*/
+
+  /* el 100vh es: medidad relativa se acomoda al espacio que tenga el usuario en la pantalla, los 200px exceptua el tamaño que tenga heder y del foore*/
+  min-height: calc(100vh - 200px);
+}
+
+.login__container {
+  background-color: rgba(255, 255, 255, 0.1); /*blanquea*/
+  border: 2px solid white; /*borde*/
+  border-radius: 40px; /*curva del borde*/
+  color: white; /*color de la fuente*/
+  padding: 80px 40px;
+
+  /* La propiedad min-width o height se usa para determinar la anchura mínima de un elemento. Previene que la propiedad width pueda ser inferior que min-width. */
+  min-height: 600px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login__container--form {
+  /*Acomode de forma columna haciendo que los elementos estén uno debajo de otro*/
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  background: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid white;
+  padding: 10px 10px;
+  margin: 15px 0px;
+}
+::placeholder {
+  color: white;
+}
+
+.button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 30px;
+  height: 50px;
+  margin: 20px 0px;
+  color: white;
+  letter-spacing: 1px; /*Espaciado entre letras */
+  cursor: pointer;
+  font-weight: bold; /*negrilla*/
+  font-size: 16px;
+  font-family: "Mulish", sans-serif; /*fuente*/
+}
+
+.login__container--remember-me {
+  display: flex;
+  justify-content: space-between; /*hace un espaciado igual entre items*/
+  align-items: center; /*Centra todo en una linea */
+  margin-top: 14px;
+  color: white;
+}
+
+.login__container--remember-me label {
+  font-size: 14px;
+}
+
+.login__container--remember-me a {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.login__container--remember-me a:hover {
+  text-decoration: underline;
+}
+
+.login__container--social-media {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0;
+}
+
+.login__container--social-media > div > img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.login__container--social-media > div {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login__container--register {
+  font-size: 14px;
+  color: white;
+}
+
+.login__container--register a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold; /*negrilla*/
+  color: white;
+  font-family: "Mulish", sans-serif; /*fuente*/
+}
+
+.login__container--register a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background: #ab88ff;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+.footer > a {
+  font-size: 14px;
+  color: white;
+  display: flex;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.footer > a:hover {
+  text-decoration: underline;
+}

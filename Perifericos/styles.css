@@ -1,0 +1,221 @@
+body {
+    margin: 0; /*margen al borde de la pantalla*/
+    font-family: 'Mulish', sans-serif;/*fuente*/
+    background-color: #8f57fd;
+}
+
+.header {
+    align-items: center; /*Alinea los item*/
+    background: #8f57fd;
+    color: white;
+    display: flex;
+    height: 100px;
+    justify-content: space-between; /*los elementos se distribuyen uniformemente en la  linea*/
+    top: 0px;
+    width: 100%; /* medida relativa, se acomoda a todo*/
+    
+    
+}
+
+    .header__img {
+        margin-left: 30px;
+        width: 200px;
+        
+    }
+
+    /* la caja del menu */
+    .header__menu {
+        margin-right: 40px; /*separa del borde derecho*/
+        
+    }
+
+    /* estilo del ul por dentro*/
+    .header__menu ul {
+        display: none; /*deshabilitamos ver el menu*/
+        list-style: none; /*quita puntos de lista que van por defecto*/
+        margin: 0px 0px 0px -14px; /*Le damos margen a ul para separarlo de margen derecha*/
+        padding: 0px; 
+        position: absolute; /*posicionarlo como queramos*/
+        width: 100px;
+        text-align: right; /*acomoda el texto de izquierda a derecha*/
+    }
+
+
+    /* da el efecto cuando pasamos el mause*/
+    .header__menu:hover ul, ul:hover { 
+        display: block; /*habilitamos ver el menu*/
+    }
+
+
+    /* style de los li, da separacion entre ellos */
+    .header__menu li {
+        margin: 10px 0px; /* top y laterales*/
+
+    }
+
+
+    /* style de las a dentro de li */
+    .header__menu li a {
+        color: white;
+        text-decoration: none; /*deshabilita el subrrallado*/
+        
+    }
+
+
+    /* volvemos a colocar el subrallado para (a) con hover*/
+    .header__menu li a:hover {
+        text-decoration: underline; /*habilita el subrrallado*/
+    }
+
+
+    /* estilo del profile dentro del menu */
+    .header__menu--profile {
+        align-items: center; /*Alinea los item*/
+        display: flex;
+        cursor: pointer;
+    }
+
+    .header__menu--profile img {
+        margin-right: 8px;
+        width: 40px;
+    }
+
+    .header__menu--profile p {
+        margin: 0px;
+        color: white;
+    }
+
+.section {
+    display: flex;
+    align-items: center; /*alinea los elementos horizontalmente*/
+    flex-direction: column; /*ajusta flex los elementos verticalmente*/
+    justify-content: center;/*alinea al centro verticalmente*/
+    height: 300px;
+    border-radius: 0px 0px 40px 40px;
+}
+
+    .section__title {
+        color: white;
+        font-size: 40px;
+    }
+
+    .buscador {
+        background-color: rgba(255,255,255,0.1);/*opacidad dentro del input*/
+        border: 2px solid white;
+        border-radius: 30px;/*curvas en esquinas*/
+        color: white;
+        font-family: 'Mulish', sans-serif;
+        font-size: 16px;
+        height: 50px;/*alto dek input*/
+        outline: none; /*deshabilita el subrallado del input al pasar el mause*/
+        margin-bottom: 20px;
+        padding: 0px 20px;/**ajusta el texto dentro del input*/
+        width: 70%;/*ancho del input*/
+    }
+
+    /* seudocodigo pone color al interior del type "text" */
+    ::placeholder {
+        color: white;
+    }
+
+.categories--title {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+    position: absolute;
+    width: 100%;/*se ajuste a diferentes tamaños de pantalla*/
+}
+
+
+.carousel {
+    overflow: scroll; /*genera la barra de movimiento horizontal*/
+    padding-left: 30px;
+    width: 100%;
+    position: relative; 
+}
+
+.carousel__container {
+    /* por defecto los elementos se organizan uno debajo de otro */
+    white-space: nowrap; /*los elementos fluyen horizontalmente*/
+    margin: 70px 0px; /*margen de arriba y abajo*/
+    padding-bottom: 10px; /*no se corte la imagen en el hover*/
+}
+
+.carousel-item {
+    border-radius: 20px; /*hace la curva en las esquinas*/
+    overflow: hidden; /*quita las barras de dezplazamiento*/
+    position: relative; /*coja los estilos y se acomode a ellos*/
+    display: inline-block; /* inline-block organiza horizontalmente los items*/
+    width: 200px;
+    height: 250px;
+    margin-right: 10px; /*espacio entre imganes*/
+    cursor: pointer; /*habilita la manito del cursor en el elemento*/
+    transition: 450ms all;/*velocidad del efecto*/
+    /*Por defecto los item se organizan verticalmente*/
+    transform-origin: center left;  /*se mueve del centro a derecha*/
+    background: beige;
+}
+
+
+/* cuando se habilita hover y cuando no está habilitado */
+.carousel-item:hover ~ .carousel-item {
+    /* al hacer hover se muevan los elementos hacia la derecha */
+    transform: translate3d(100px, 0, 0); /*transformacion (x, y, z) z= profundidad en 3d*/
+}
+
+.carousel__container:hover ~ .carousel-item {
+    opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover {
+    transform: scale(1.5); /* por lo general estan en 1, aumentarle .5 aumenta un poco*/
+    opacity: 1; /*vuelve a su opacidad normal*/
+}
+
+.carousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;/*ajusta el tamaño de la imagen en el campo*/
+}
+
+.carousel-item__details{
+    /* integra el degradado de color( va de negro(0) con tranparencia de 0.9 a negro 100%) */ 
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0 ) 100%);
+    font-size: 10px;
+    opacity: 0;
+    transition: 450ms;/*Igual velocidad del hover de item*/
+    padding: 10px; /*espacio entre los elementos*/
+    position: absolute;/*le damos nosotros la posicion
+    /* posiciones */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+
+
+
+
+}
+
+.carousel-item__details:hover {
+    opacity: 1;
+}
+
+.carousel-item__details--img {
+    width: 20px;
+}
+
+.carousel-item__details--title {
+    font-size: 10px;
+    color: white;
+    margin: 3px 0px;
+}
+.carousel-item__details--subtitle {
+    font-size: 10px;
+    color: white;
+    margin: 3px 0px;
+}
